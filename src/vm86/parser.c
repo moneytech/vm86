@@ -1,12 +1,8 @@
 /*!The x86 Script Instruction Virtual Machine
  *
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -225,7 +221,7 @@ tb_bool_t vm86_parser_get_register(tb_char_t const** pp, tb_char_t const* e, tb_
 
         // init iterator
         tb_array_iterator_t array_iterator;
-        tb_iterator_ref_t   iterator = tb_iterator_make_for_mem(&array_iterator, s_registers, tb_arrayn(s_registers), sizeof(vm86_register_entry_t));
+        tb_iterator_ref_t   iterator = tb_array_iterator_init_mem(&array_iterator, s_registers, tb_arrayn(s_registers), sizeof(vm86_register_entry_t));
 
         // find register by the binary search
         tb_size_t itor = tb_binary_find_all_if(iterator, vm86_parser_comp_register, name);

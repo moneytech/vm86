@@ -1,12 +1,8 @@
 /*!The x86 Script Instruction Virtual Machine
  *
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -363,7 +359,7 @@ static tb_bool_t vm86_proc_compiler_prepare_locals(vm86_proc_t* proc, tb_char_t 
 
         // init type
         tb_char_t type[8192] = {0};
-        for (b = p; p < e && !tb_isspace(*p); p++);
+        for (b = p; p < e && !tb_isspace(*p); p++) {}
         tb_check_break(p < e && p - b < sizeof(type));
         tb_memcpy(type, b, p - b);
 
